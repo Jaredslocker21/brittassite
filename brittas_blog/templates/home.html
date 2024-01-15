@@ -4,13 +4,14 @@
 
 {% block content %}
 <div class="main-content">
-    <h1>”Colour your world”</h1>
+    <div id="rainbow" class="element"><h1>”Colour Your World”</h1></div>
     <div class="flex-container">
         <div class="intro">
             <!-- Content for the 'intro' div -->
+
             {% if content %}
-                <h2>{{ content.title }}</h2>
-                <p>{{ content.description }}</p>
+                <span class="description">{{ content.description }}</span>
+                <span class="title">{{ content.title }}</span>
             {% else %}
                 <p>No content found for the home page.</p>
             {% endif %}

@@ -30,14 +30,14 @@
     </div>
     
     <header class="header" id="myHeader">
-        <div class="logo">
-            <!-- Add your logo here -->
-            <img src="{% static 'logo/logo.png' %}" alt="Britta's Blog Logo">
-        </div>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'jewelry' %}">Jewelry</a></li>
+                <div class="logo">
+                    <!-- Add your logo here -->
+                    <img src="{% static 'logo/logo.png' %}" alt="Britta's Blog Logo">
+                </div>
                 <li><a href="{% url 'art' %}">Art</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
             </ul>
@@ -72,26 +72,41 @@
     </footer>
     <script src="https://kit.fontawesome.com/cd08493386.js" crossorigin="anonymous"></script>
     <script>
-        window.onscroll = function() {myFunction()};
+        window.onscroll = function() {
+            myFunction();
+            shrinkLogoOnScroll();
+        };
         
         var header = document.getElementById("myHeader");
         var sticky = header.offsetTop;
-        
+        var logo = document.querySelector('.logo img');
+    
         function myFunction() {
-          if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-          } else {
-            header.classList.remove("sticky");
-          }
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
         }
-
+    
+        function shrinkLogoOnScroll() {
+            if (window.pageYOffset > 50) {
+                logo.style.width = '2rem';  /* Adjust the reduced width on scroll */
+                logo.style.height = '3rem'; /* Adjust the reduced height on scroll */
+            } else {
+                logo.style.width = '4rem';  /* Adjust the original width when not scrolling */
+                logo.style.height = '5rem'; /* Adjust the original height when not scrolling */
+            }
+        }
+    
         function toggleMobileMenu() {
             var mobileMenu = document.querySelector('.mobile-menu');
             var navList = document.querySelector('nav ul');
-
+    
             mobileMenu.classList.toggle('active');
             navList.classList.toggle('show-mobile');
-}
-        </script>
+        }
+    </script>
+    
 </body>
 </html>

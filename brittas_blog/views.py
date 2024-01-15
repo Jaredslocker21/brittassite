@@ -3,10 +3,10 @@ from .models import HomePageContent
 
 # Create your views here.
 # brittas_blog/views.py
-from django.shortcuts import render
 
 def home(request):
-    return render(request, 'home.html')
+   content = HomePageContent.objects.first()  # Retrieve the first record, you can modify this based on your needs
+   return render(request, 'home.html', {'content': content})
 
 def jewelry(request):
     # Your view logic here

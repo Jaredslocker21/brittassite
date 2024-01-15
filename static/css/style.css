@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+h1 {
+    text-align:center;
+    margin-bottom: 20px; /* Add margin to separate h1 from the divs */
+
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header {
+    background-color: transparent; /* Use your desired background color */
+    padding: 10px;
+    border: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(255, 254, 254, 0.8);
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    
+}
+
+.logo img {
+    width: 100px; /* Adjust the size of your logo */
+}
+
+/* nav */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 120px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 23px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #edeff2;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + main {
+    padding-top: 60px;
+  }
+
+/* main*/
+
+main {
+    margin-top: 100px;
+    flex-grow: 1;
+    overflow-y: auto; /* Allow main content to scroll if needed */
+    padding-top: 80px; /* Adjust the padding to avoid content under the fixed header */
+    padding-bottom: 50px; /* Adjust the padding to avoid content under the fixed footer */
+    background-color: rgb(90, 89, 89);
+}
+/* footer */
+
+footer {
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px 2px 10px rgba(252, 252, 252, 0.8);
+    background: transparent;
+    opacity:0.7;
+
+}
+
+#copyright {
+    color: rgb(253, 253, 254);
+    font-family: "Josefin sans", Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/*social-network-icons*/
+
+.social-network-icons {
+    text-align: center;
+}
+
+.social-network-icons li {
+    display: inline;
+    list-style: none;
+}
+.social-network-icons li:hover {
+    list-style: none;
+    opacity: 0.8;
+    text-decoration: none;
+    border-bottom: 0;
+}
+
+.social-network-icons i {
+    font-size: 2rem;
+    color: #ffffff;
+    padding: 20px;
+}
+
+/* responsive header and nav*/
+header {
+    background-color: #595959;
+}
+
+/* styles for the mobile menu */
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+}
+
+/* Media query to show/hide elements based on screen size */
+@media only screen and (max-width: 750px) {
+    nav ul {
+        display: none; /* Hide the regular nav menu */
+    }
+
+    .mobile-menu {
+        display: block; /* Show the mobile menu icon */
+    }
+
+
+    nav ul.show-mobile {
+        display: flex; /* Show the mobile nav menu */
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+    }
+}
+
+
+
+/* Intro */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the container */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly between the two divs */
+    width: 100%; /* Make the container take the full width of the main-content */
+    
+}
+
+.intro, .intro-photo {
+    width: 33%; /* Adjust the width based on your preference */
+    margin: 10px; /* Adjust the margin based on your preference */
+}
+
+/* Additional styling if necessary */
+
+.flex-container > div {
+    display: inline-flex;
+    margin: 10px;
+    padding: 70px;
+    font-size: 30px;
+    box-shadow: rgba(223, 222, 222, 0.35) 0px 5px 15px;
+    transition: 1s box-shadow;   
+  }

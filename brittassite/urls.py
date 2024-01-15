@@ -16,15 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from brittas_blog.views import home
-
-#from .views import jewelry
-#from .views import art
-#from .views import about
+from brittas_blog.views import jewelry
+from brittas_blog.views import art
+from brittas_blog.views import about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-   # path('jewelry/', jewelry, name='jewelry'),
-   # path('art/', art, name='art'),
-   # path('about/', art, name='about'),
+    path('jewelry/', jewelry, name='jewelry'),
+    path('art/', art, name='art'),
+    path('about/', art, name='about'),
 ]

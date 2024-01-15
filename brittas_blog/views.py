@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import HomePageContent
 
 # Create your views here.
 # brittas_blog/views.py

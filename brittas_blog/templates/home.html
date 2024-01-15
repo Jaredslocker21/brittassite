@@ -1,3 +1,5 @@
+<!-- home.html in your templates folder -->
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -7,16 +9,16 @@
         <div class="intro">
             <!-- Content for the 'intro' div -->
             <p>This is a place where...</p>
-            {% if instance %}
-                <h2>{{ instance.title }}</h2>
-                <p>{{ instance.content }}</p>
+            {% if content %}
+                <h2>{{ content.title }}</h2>
+                <p>{{ content.description }}</p>
             {% else %}
-                <p>No Intro instance found.</p>
+                <p>No content found for the home page.</p>
             {% endif %}
         </div>
         <div class="intro-photo">
             <!-- Content for the 'intro-photo' div -->
-            <img src="{% if instance %}{{ instance.image.url }}{% endif %}" alt="{% if instance %}{{ instance.alt_text }}{% endif %}">
+            <img src="{% if content %}{{ content.image.url }}{% endif %}" alt="{% if content %}{{ content.alt_text }}{% endif %}">
         </div>
     </div>
 </div>

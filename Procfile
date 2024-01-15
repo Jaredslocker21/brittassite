@@ -1,0 +1,1 @@
+web: gunicorn brittassite.wsgi

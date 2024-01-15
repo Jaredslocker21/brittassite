@@ -1,0 +1,95 @@
+{% load static %}
+
+<!-- In your base.html or any other template that extends it -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Other head elements -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Britta's Blog</title>
+    <!-- Add this line to link the favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>Britta's Blog</title>
+    
+</head>
+<body>
+    <div class="mobile-menu" onclick="toggleMobileMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <header class="header" id="myHeader">
+        <div class="logo">
+            <!-- Add your logo here -->
+            <img src="{% static 'logo/logo.png' %}" alt="Britta's Blog Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+
+    <footer>
+        <ul class="social-network-icons">
+            <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fa-brands fa-facebook-square"></i></a>
+            </li>
+            <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page"><i class="fa-brands fa-twitter-square"></i></a>
+            </li>
+            <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page)"><i class="fa-brands fa-instagram-square"></i></a>
+            </li>
+            <li>
+                <a href="index.html" aria-label="To the main page."><i class="fa-solid fa-house"></i></a>
+            </li>
+        </ul>
+
+        <div id="copyright">
+            <h3>
+                copyright: 2022 JMC Credits are located in the read me file
+            </h3>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/cd08493386.js" crossorigin="anonymous"></script>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+
+        function toggleMobileMenu() {
+            var mobileMenu = document.querySelector('.mobile-menu');
+            var navList = document.querySelector('nav ul');
+
+            mobileMenu.classList.toggle('active');
+            navList.classList.toggle('show-mobile');
+}
+        </script>
+</body>
+</html>

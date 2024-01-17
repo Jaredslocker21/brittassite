@@ -12,6 +12,7 @@
             {% if content %}
                 <span class="description">{{ content.description }}</span>
                 <span class="title">{{ content.title }}</span>
+                <hr>
             {% else %}
                 <p>No content found for the home page.</p>
             {% endif %}
@@ -19,7 +20,15 @@
         <div class="intro-photo">
             <!-- Content for the 'intro-photo' div -->
             <img src="{% if content %}{{ content.image.url }}{% endif %}" alt="{% if content %}{{ content.alt_text }}{% endif %}">
+            <hr>
         </div>
+        <section id="divider">
+            <div class="divider-one"></div>
+            <div id="divider-cover-text">
+                <h2>From Nature</h2>
+                <h3>Art presents itself!</h3>
+            </div>
+        </section>
     </div>
 </div>
 {% endblock %}

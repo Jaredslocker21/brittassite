@@ -1,5 +1,4 @@
 /* Reset and global styles */
-/*@import url("https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans&display=swap");*/
 * {
     margin: 0;
     padding: 0;
@@ -29,14 +28,18 @@ header {
     background-color: rgba(161, 8, 8, 0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
     box-shadow: 0px 2px 10px rgba(56, 53, 53, 0.8);
     width: 100%;
     z-index: 1000;
     position: fixed;
 }
 
-/*Logo */
+/* Logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
 
 .logo-text {
     display: flex;
@@ -47,8 +50,8 @@ header {
 
 .element {
     animation: rainbow 15s infinite;
-    font-size: 1.5rem; /* Adjust the font size as needed */
-    margin: 0 2px; /* Adjust the spacing between letters */
+    font-size: 1.5rem;
+    margin: 0 2px;
 }
 
 header:hover .logo img {
@@ -65,9 +68,7 @@ header:hover .logo img {
 /* Navigation styles */
 nav {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 nav ul {
@@ -78,7 +79,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 30px;
+    margin: 0 20px;
 }
 
 nav a {
@@ -121,9 +122,9 @@ main {
     font-weight: bold;
     font-size: 1.35rem;
     color: #fff;
-    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 1.0);
     padding: 0%;
-    margin: 6%;
+    margin: 10%;
     border-radius: 20px;
 }
 
@@ -185,8 +186,6 @@ footer {
     margin: 6px 0;
 }
 
-
-
 /* Intro and Flex container styles */
 .main-content {
     display: flex;
@@ -204,9 +203,9 @@ footer {
 
 .intro,
 .intro-photo {
-    width: 33%;
-    margin: 10px;
-    height: 150px;
+  
+    width: 100%; /* Updated to full width */
+    margin: 10px 0;
     box-sizing: border-box;
 }
 
@@ -240,66 +239,117 @@ footer {
 
 /* Additional styling if necessary */
 #divider {
-    height: 180px;
+    height: 100px;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
     background-size: 100%;
-    position: relative;
+    position: fixed;
     overflow: hidden;
-    background-color:transparent;
+    background-color: transparent;
     display: flex;
-    margin-top: 250px;
-    display: flex;
+    margin-top: px;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 2px 10px rgba(56, 53, 53, 0.8);
+    box-shadow: 0px 2px 10px rgba(248, 248, 248, 0.8);
+    transition: box-shadow 0.3s ease-in-out; /* Add transition for a smooth effect */
 }
+
+
+
 
 /* Media query for small screens */
 @media only screen and (max-width: 750px) {
     nav ul {
         display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: rgba(161, 8, 8, 0.5);
+        z-index: 1000;
+        text-align: center;
+    }
+
+    nav ul.show-mobile {
+        display: flex;
     }
 
     .mobile-menu {
         display: block;
     }
 
-    nav ul.show-mobile {
-        display: flex;
+    header {
         flex-direction: column;
-        position: fixed;
-        top: 70px;
-        width: 100%;
-        background-color: #ffffff;
-        z-index: 1000;
-        text-align: center;
-        opacity: 1;
+        align-items: center;
     }
 
-    /* Full-width intro on small screens */
+    .logo {
+        margin-bottom: 20px;
+    }
 }
 
+/* Full-width intro on small screens */
 @media screen and (max-width: 850px) {
-    #logo {
-        clear: both;
-        padding: 20px;
-        margin: 5px;
-        font-size: 2rem;
+    .main-content {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .intro, .intro-photo  {
+    .intro,
+    .intro-photo  {
         
+        width: 100%;
+        margin: 10px 9;
+    }
+
+    #treatments {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        font-family: "Cardo", sans-serif;
+        padding: 20px;
+        width: 100%;
     }
 
     #divider {
-        height: 325px;
+        flex: auto;
+        position: relative;
+        margin-bottom: 40px;
     }
+}
 
-    .rainbow {
 
-    }
+#treatments {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    font-family: "Cardo", sans-serif;
+    padding: 20px;
+}
 
- 
+.treatments-item {
+    margin: 20px;
+}
+
+.treatments-item>p {
+    font-size: 1rem;
+}
+
+.treatments-item li {
+    font-size: 1rem;
+}
+
+.treatments-item ul {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.treatment-images {
+    background-color: white;
+    text-align: center;
+    margin-top: 20px;
 }

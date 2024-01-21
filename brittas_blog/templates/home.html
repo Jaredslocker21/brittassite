@@ -8,7 +8,6 @@
     <div class="flex-container">
         <div class="intro">
             <!-- Content for the 'intro' div -->
-
             {% if content %}
                 <span class="description">{{ content.description }}</span>
                 <span class="title">{{ content.title }}</span>
@@ -16,19 +15,49 @@
             {% else %}
                 <p>No content found for the home page.</p>
             {% endif %}
-        </div>
-        <div class="intro-photo">
-            <!-- Content for the 'intro-photo' div -->
-            <img src="{% if content %}{{ content.image.url }}{% endif %}" alt="{% if content %}{{ content.alt_text }}{% endif %}">
-            <hr>
+
+            <div class="intro-photo">
+                <!-- Content for the 'intro-photo' div -->
+                <img src="{% if content %}{{ content.image.url }}{% endif %}" alt="{% if content %}{{ content.alt_text }}{% endif %}">
+                <hr>
+            </div>
         </div>
         <section id="divider">
-            <div class="divider-one"></div>
+            <div class="divider-one">divider one</div>
             <div id="divider-cover-text">
                 <h2>From Nature</h2>
                 <h3>Art presents itself!</h3>
             </div>
         </section>
     </div>
+    <div>
+        <h2 id="treatments-header" class="element">
+            Custom Desings
+        </h2>
+        <hr>
+    </div>
+    <section id="treatments">
+        <div class="treatments-item">
+            <h2>Item</h2>
+            <div class="treatment-images">
+                <img src="assets/images/275px.jpeg" alt="a person in pain" />
+            </div>
+        </div>
+        <div class="treatments-item">
+            <h2>Item</h2>
+            <br>
+            
+            <div class="treatment-images">
+                <img src="assets/images/275pxlowbackpain.jpeg" alt="a person with lower back pain" />
+            </div>
+        </div>
+        <div class="treatments-item">
+            <h2>Item</h2>
+            <br>
+            <div class="treatment-images">
+                <img src="assets/images/275pxneckpain.jpeg" alt="a person with neck pain" />
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock %}

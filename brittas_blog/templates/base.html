@@ -1,12 +1,11 @@
 {% load static %}
 
-<!-- In your base.html or any other template that extends it -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Other head elements -->
     <meta charset="UTF-8">
-    <meta name="viewport"  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Bringing the community together.">
     <meta name="keywords" content="community, artists, local, events">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -42,7 +41,7 @@
                         <span class="element">t</span>
                         <span class="element">t</span>
                         <span class="element">a</span>
-                        <span class="element">&nbsp;</span> <!-- Add space between Britta and Klingenstierna -->
+                        <span class="element">&nbsp;</span>
                         <span class="element">K</span>
                         <span class="element">l</span>
                         <span class="element">i</span>
@@ -58,8 +57,6 @@
                         <span class="element">n</span>
                         <span class="element">a</span>
                     </div>
-                    <!-- Add your logo here -->
-                    <!-- <img src="{% static 'logo/logo.png' %}" alt="Britta's Blog Logo"> -->
                 </div>
                 <li><a href="{% url 'art' %}">Art</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
@@ -95,7 +92,6 @@
     <script>
         var header = document.getElementById("myHeader");
         var sticky = header.offsetTop;
-        
     
         function myFunction() {
             if (window.pageYOffset > sticky) {
@@ -113,6 +109,5 @@
             navList.classList.toggle('show-mobile');
         }
     </script>
-    
 </body>
 </html>

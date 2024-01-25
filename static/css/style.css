@@ -109,7 +109,7 @@ main {
     overflow-y: auto;
     padding-top: 112px;
     padding-bottom: 150px;
-    background-color: rgba(161, 8, 8);
+    background-color: rgb(255, 255, 255);
 }
 
 /* CSS styles for stacking spans */
@@ -295,23 +295,20 @@ footer {
     .main-content {
         flex-direction: column;
         align-items: center;
+        background-color: rgba(161, 8, 8);
     }
 
     .intro,
     .intro-photo  {
-        
         width: 100%;
         margin: 10px 9;
     }
 
-    #treatments {
+    #design {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        text-align: left;
+        justify-content: space-around;
         font-family: "Cardo", sans-serif;
-        padding: 20px;
-        width: 100%;
     }
 
     #divider {
@@ -321,35 +318,23 @@ footer {
     }
 }
 
-
-#treatments {
+#design {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    justify-content: space-around;
     font-family: "Cardo", sans-serif;
-    padding: 20px;
+    font-weight: bolder;
+    margin-top: 50;
 }
 
-.treatments-item {
-    margin: 20px;
+.design-item {
+    margin: 20px
 }
-
-.treatments-item>p {
-    font-size: 1rem;
-}
-
-.treatments-item li {
-    font-size: 1rem;
-}
-
-.treatments-item ul {
-    padding: 5px;
-    margin-left: 10px;
-}
-
 .treatment-images {
     background-color: white;
-    text-align: center;
-    margin-top: 20px;
+    display: flex;
+    height: 150px;
+    width: 150px;
+    
+    
 }

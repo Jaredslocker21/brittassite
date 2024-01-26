@@ -119,8 +119,12 @@ main {
     justify-content: space-around;
     font-family: "Cardo", sans-serif;
     font-weight: bolder;
-    margin-top: 50;
+    margin-top: 175px;
     flex-wrap: wrap;
+}
+
+#design-header {
+    margin-top: 150px;
 }
 
 .design-item {

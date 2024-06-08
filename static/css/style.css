@@ -289,6 +289,31 @@ footer {
     animation: rainbow 15s infinite;
 }
 
+
+/* static/css/style.css */
+.gallery-section {
+    margin-bottom: 4rem;
+}
+
+.gallery-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+
 @keyframes rainbow {
     0% { color: red; }
     16.66% { color: orange; }

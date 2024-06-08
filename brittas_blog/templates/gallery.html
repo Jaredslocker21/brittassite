@@ -43,7 +43,65 @@
         </nav>
     </header>
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        <div class="container">
+            <h1 class="text-center my-4">Gallery</h1>
+            
+            <!-- Jewelry Section -->
+            <div class="gallery-section">
+                <h2>Jewelry</h2>
+                <div class="row">
+                    {% for item in jewelry_items %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.alt_text }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.name }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        
+            <!-- Paintings Section -->
+            <div class="gallery-section">
+                <h2>Paintings</h2>
+                <div class="row">
+                    {% for item in painting_items %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.alt_text }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.name }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        
+            <!-- Sculptures Section -->
+            <div class="gallery-section">
+                <h2>Sculptures</h2>
+                <div class="row">
+                    {% for item in sculpture_items %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.alt_text }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.name }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endblock %}
     </main>
     
 

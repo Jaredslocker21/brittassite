@@ -19,16 +19,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/site_images/favicon.ico' %}">
     <link rel="manifest" href="/site.webmanifest">
     
-    <title>gallery</title>
+    <title>Gallery</title>
     
 </head>
 <body>
-    <div class="mobile-menu" onclick="toggleMobileMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    
     <header class="header" id="myHeader">
         <div class="logo">
             <!-- Add your logo here -->
@@ -41,26 +35,32 @@
                 <li><a href="{% url 'about' %}">About</a></li>
             </ul>
         </nav>
+        <nav class="mobile-menu" onclick="toggleMobileMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </nav>
+        <nav class="submenu">
+            <!-- Submenu content -->
+            <ul>
+                <li><a href="#jewelry">Jewelry</a></li>
+                <li><a href="#paintings">Paintings</a></li>
+                <li><a href="#sculptures">Sculptures</a></li>
+                <li><a href="#top">Back to Top</a></li>
+            </ul>
+        </nav>
     </header>
+
+    </header>
+
     <!-- Gallery Sections -->
-    <div id="jewelry" class="gallery-section">
-        <!-- Jewelry Section content -->
-    </div>
-
-    <div id="paintings" class="gallery-section">
-        <!-- Paintings Section content -->
-    </div>
-
-    <div id="sculptures" class="gallery-section">
-        <!-- Sculptures Section content -->
-    </div>
     <main>
         {% block content %}
         <div class="container">
-            <h1 class="text-center my-4">Gallery</h1>
+            <h1 class="text-center my-4 element">Gallery</h1>
             
             <!-- Jewelry Section -->
-            <div class="gallery-section">
+            <div id="jewelry" class="gallery-section">
                 <h2>Jewelry</h2>
                 <div class="row">
                     {% for item in jewelry %}
@@ -78,7 +78,7 @@
             </div>
             
             <!-- Paintings Section -->
-            <div class="gallery-section">
+            <div id="paintings" class="gallery-section">
                 <h2>Paintings</h2>
                 <div class="row">
                     {% for item in paintings %}
@@ -159,7 +159,14 @@
 
             mobileMenu.classList.toggle('active');
             navList.classList.toggle('show-mobile');
+            
 }
+
+function toggleMobileMenu() {
+    var submenu = document.querySelector('.submenu');
+    submenu.classList.toggle('active');
+}
+
         </script>
 </body>
 </html>

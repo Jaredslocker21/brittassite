@@ -36,12 +36,24 @@
         </div>
         <nav>
             <ul>
-                <li><a href="{% url 'Home' %}">Home</a></li>
-                <li><a href="{% url 'Gallery' %}">gallery</a></li>
-                <li><a href="{% url 'About' %}">About</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
             </ul>
         </nav>
     </header>
+    <!-- Gallery Sections -->
+    <div id="jewelry" class="gallery-section">
+        <!-- Jewelry Section content -->
+    </div>
+
+    <div id="paintings" class="gallery-section">
+        <!-- Paintings Section content -->
+    </div>
+
+    <div id="sculptures" class="gallery-section">
+        <!-- Sculptures Section content -->
+    </div>
     <main>
         {% block content %}
         <div class="container">

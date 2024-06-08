@@ -8,16 +8,13 @@ def home(request):
    content = HomePageContent.objects.first()  # Retrieve the first record, you can modify this based on your needs
    return render(request, 'home.html', {'content': content})
 
-def jewelry(request):
+def gallery(request):
     # Your view logic here
-    return render(request, 'jewelry.html')  # Replace with the actual template name
+    return render(request, 'gallery.html')  # Replace with the actual template name
 
     brittas_blog/views.py
 from django.shortcuts import render
 
-def art(request):
-    # Your view logic here
-    return render(request, 'art.html')  # Replace with the actual template name
 
 def about(request):
     # Your view logic here

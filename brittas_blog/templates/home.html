@@ -4,35 +4,40 @@
 
 {% block content %}
 <div class="main-content">
-    <div id="rainbow" class="element"><h1>”Colour Your World”</h1></div>
+    <div id="rainbow" class="element">
+        <h1>”Colour Your World”</h1>
+    </div>
     <div class="flex-container">
         <div class="intro">
             <!-- Content for the 'intro' div -->
             {% if content %}
-                <span class="description">{{ content.description }}</span>
-                <span class="title">{{ content.title }}</span>
-                <hr>
+            <span class="description">{{ content.description }}</span>
+            <span class="title">{{ content.title }}</span>
+            <hr>
             {% else %}
-                <p>No content found for the home page.</p>
+            <p>No content found for the home page.</p>
             {% endif %}
 
             <div class="intro-photo">
                 <!-- Content for the 'intro-photo' div -->
-                <img src="{% if content %}{{ content.image.url }}{% endif %}" alt="{% if content %}{{ content.alt_text }}{% endif %}">
+                <img src="{% if content %}{{ content.image.url }}{% endif %}"
+                    alt="{% if content %}{{ content.alt_text }}{% endif %}">
                 <hr>
             </div>
         </div>
         <section id="divider" class="rainbow element">
             <div id="divider-cover-text">
-                <h2>From Nature</h2>
+                <h3>From Nature</h3>
                 <h3>Art presents itself!</h3>
             </div>
             <video right="320" height="240" controls>
                 <source src="movie.mp4" type="video/mp4">
                 <source src="movie.ogg" type="video/ogg">
                 Your browser does not support the video tag.
-              </video>
+            </video>
+
         </section>
+
     </div>
     <div>
         <h2 id="design-header" class="element">

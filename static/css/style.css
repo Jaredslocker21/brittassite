@@ -388,3 +388,9 @@ footer {
     }
 }
 
+.background-image {
+    background-image: url('/static/media/site_images/top-view-collection-leaves-dots.jpg');
+    background-size: cover;
+    background-position: center;
+}
+

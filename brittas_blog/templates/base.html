@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +20,11 @@
     <title>Britta's Blog</title>
     
 </head>
-<body class="background-image">
+<body>
+    <div class="background-image">
+        <img src="{% static 'media/site_images/top_view_collection_leaves_dots.jpg' %}">
+    </div>
+    
     <div class="mobile-menu" onclick="toggleMobileMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -33,6 +36,7 @@
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
                 <div class="logo">
                     <div class="logo-text" id="rainbow">
                         <span class="element">B</span>
@@ -58,7 +62,6 @@
                         <span class="element">a</span>
                     </div>
                 </div>
-                <li><a href="{% url 'about' %}">About</a></li>
             </ul>
         </nav>
     </header>
@@ -107,6 +110,9 @@
             mobileMenu.classList.toggle('active');
             navList.classList.toggle('show-mobile');
         }
+
+        window.onscroll = function() {myFunction()};
     </script>
 </body>
 </html>
+

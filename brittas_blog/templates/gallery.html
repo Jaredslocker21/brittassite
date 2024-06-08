@@ -36,9 +36,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'gallery' %}">gallery</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'Home' %}">Home</a></li>
+                <li><a href="{% url 'Gallery' %}">gallery</a></li>
+                <li><a href="{% url 'About' %}">About</a></li>
             </ul>
         </nav>
     </header>
@@ -51,7 +51,7 @@
             <div class="gallery-section">
                 <h2>Jewelry</h2>
                 <div class="row">
-                    {% for item in jewelry_items %}
+                    {% for item in jewelry %}
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.alt_text }}">
@@ -64,12 +64,12 @@
                     {% endfor %}
                 </div>
             </div>
-        
+            
             <!-- Paintings Section -->
             <div class="gallery-section">
                 <h2>Paintings</h2>
                 <div class="row">
-                    {% for item in painting_items %}
+                    {% for item in paintings %}
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.alt_text }}">
@@ -82,12 +82,12 @@
                     {% endfor %}
                 </div>
             </div>
-        
+            
             <!-- Sculptures Section -->
             <div class="gallery-section">
                 <h2>Sculptures</h2>
                 <div class="row">
-                    {% for item in sculpture_items %}
+                    {% for item in sculptures %}
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.alt_text }}">
@@ -100,7 +100,6 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
         {% endblock %}
     </main>
     

@@ -32,40 +32,44 @@
     </div>
     
     <header class="header" id="myHeader">
+        <div class="logo">
+            <!-- Add your logo here -->
+            <img src="{% static 'logo/logo.png' %}" alt="Britta's Blog Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'gallery' %}">Gallery</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
-                <div class="logo">
-                    <div class="logo-text" id="rainbow">
-                        <span class="element">B</span>
-                        <span class="element">r</span>
-                        <span class="element">i</span>
-                        <span class="element">t</span>
-                        <span class="element">t</span>
-                        <span class="element">a</span>
-                        <span class="element">&nbsp;</span>
-                        <span class="element">K</span>
-                        <span class="element">l</span>
-                        <span class="element">i</span>
-                        <span class="element">n</span>
-                        <span class="element">g</span>
-                        <span class="element">e</span>
-                        <span class="element">n</span>
-                        <span class="element">s</span>
-                        <span class="element">t</span>
-                        <span class="element">i</span>
-                        <span class="element">e</span>
-                        <span class="element">r</span>
-                        <span class="element">n</span>
-                        <span class="element">a</span>
-                    </div>
-                </div>
             </ul>
         </nav>
     </header>
     <main>
+        <div class="logo">
+            <div class="logo-text" id="rainbow">
+                <span class="element">B</span>
+                <span class="element">r</span>
+                <span class="element">i</span>
+                <span class="element">t</span>
+                <span class="element">t</span>
+                <span class="element">a</span>
+                <span class="element">&nbsp;</span>
+                <span class="element">K</span>
+                <span class="element">l</span>
+                <span class="element">i</span>
+                <span class="element">n</span>
+                <span class="element">g</span>
+                <span class="element">e</span>
+                <span class="element">n</span>
+                <span class="element">s</span>
+                <span class="element">t</span>
+                <span class="element">i</span>
+                <span class="element">e</span>
+                <span class="element">r</span>
+                <span class="element">n</span>
+                <span class="element">a</span>
+            </div>
+        </div>
         {% block content %}{% endblock %}
     </main>
     <footer>

@@ -432,7 +432,7 @@ card {
 .dropdown-content a:hover {
     
     color: #000000; /* Change link color on hover */
-    font-size: 1.2rem; /* Increase font size on hover */
+    font-size: 2.2rem; /* Increase font size on hover */
     transform: scale(1.1); /* Slightly zoom in on hover */
 }
 

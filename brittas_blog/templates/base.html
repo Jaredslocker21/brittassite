@@ -24,7 +24,6 @@
     <div class="background-image">
         <img src="{% static 'media/site_images/top_view_collection_leaves_dots.jpg' %}">
     </div>
-    
     <div class="mobile-menu" onclick="toggleMobileMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -75,6 +74,9 @@
     <footer>
         <ul class="social-network-icons">
             <li>
+                <a href="{% url 'home' %}" aria-label="To the main page."><i class="fa-solid fa-house"></i></a>
+            </li>
+            <li>
                 <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fa-brands fa-facebook-square"></i></a>
             </li>
             <li>
@@ -82,9 +84,6 @@
             </li>
             <li>
                 <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page"><i class="fa-brands fa-instagram-square"></i></a>
-            </li>
-            <li>
-                <a href="home.html" aria-label="To the main page."><i class="fa-solid fa-house"></i></a>
             </li>
         </ul>
 

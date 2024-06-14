@@ -12,33 +12,24 @@
             <!-- Content for the 'intro' div -->
             {% if content %}
             <span class="description">{{ content.description }}</span>
-            <span class="title">{{ content.title }}</span>
+            
             <hr>
             {% else %}
             <p>No content found for the home page.</p>
             {% endif %}
-
+            <!-- Content for the 'intro-photo' div -->
             <div class="intro-photo">
-                <!-- Content for the 'intro-photo' div -->
                 <img src="{% if content %}{{ content.image.url }}{% endif %}"
                     alt="{% if content %}{{ content.alt_text }}{% endif %}">
-                <hr>
             </div>
         </div>
-        <section id="divider" class="rainbow element">
-            <div id="divider-cover-text">
-                <h3>From Nature</h3>
-                <h3>Art presents itself!</h3>
-            </div>
-            <video right="320" height="240" controls>
-                <source src="movie.mp4" type="video/mp4">
-                <source src="movie.ogg" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-
-        </section>
-
     </div>
+    <section id="divider" class="rainbow element">
+        <div id="divider-cover-text">
+            <h3>From Nature</h3>
+            <h3>Art presents itself!</h3>
+        </div>
+    </section>
     <div>
         <h2 id="design-header" class="element">
             Custom Designs

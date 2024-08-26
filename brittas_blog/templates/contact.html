@@ -1,10 +1,12 @@
 {% load static %}
+
+<!-- In your base.html or any other template that extends it -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Other head elements -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport"  content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Bringing the community together.">
     <meta name="keywords" content="community, artists, local, events">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -17,7 +19,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/site_images/favicon.ico' %}">
     <link rel="manifest" href="/site.webmanifest">
     
-    <title>Britta's Blog</title>
+    <title>About</title>
     
 </head>
 <body>
@@ -26,6 +28,7 @@
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
+    
     <header class="header" id="myHeader">
         <div class="logo">
             <!-- Add your logo here -->
@@ -41,38 +44,12 @@
         </nav>
     </header>
     <main>
-        <div class="logo">
-            <div class="logo-text" id="rainbow">
-                <span class="element">B</span>
-                <span class="element">r</span>
-                <span class="element">i</span>
-                <span class="element">t</span>
-                <span class="element">t</span>
-                <span class="element">a</span>
-                <span class="element">&nbsp;</span>
-                <span class="element">K</span>
-                <span class="element">l</span>
-                <span class="element">i</span>
-                <span class="element">n</span>
-                <span class="element">g</span>
-                <span class="element">e</span>
-                <span class="element">n</span>
-                <span class="element">s</span>
-                <span class="element">t</span>
-                <span class="element">i</span>
-                <span class="element">e</span>
-                <span class="element">r</span>
-                <span class="element">n</span>
-                <span class="element">a</span>
-            </div>
-        </div>
         {% block content %}{% endblock %}
     </main>
+    
+
     <footer>
         <ul class="social-network-icons">
-            <li>
-                <a href="{% url 'home' %}" aria-label="To the main page."><i class="fa-solid fa-house"></i></a>
-            </li>
             <li>
                 <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fa-brands fa-facebook-square"></i></a>
             </li>
@@ -81,6 +58,9 @@
             </li>
             <li>
                 <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page"><i class="fa-brands fa-instagram-square"></i></a>
+            </li>
+            <li>
+                <a href="index.html" aria-label="To the main page."><i class="fa-solid fa-house"></i></a>
             </li>
         </ul>
 
@@ -92,27 +72,26 @@
     </footer>
     <script src="https://kit.fontawesome.com/cd08493386.js" crossorigin="anonymous"></script>
     <script>
+        window.onscroll = function() {myFunction()};
+        
         var header = document.getElementById("myHeader");
         var sticky = header.offsetTop;
-    
+        
         function myFunction() {
-            if (window.pageYOffset > sticky) {
-                header.classList.add("sticky");
-            } else {
-                header.classList.remove("sticky");
-            }
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
         }
-    
+
         function toggleMobileMenu() {
             var mobileMenu = document.querySelector('.mobile-menu');
             var navList = document.querySelector('nav ul');
-    
+
             mobileMenu.classList.toggle('active');
             navList.classList.toggle('show-mobile');
-        }
-
-        window.onscroll = function() {myFunction()};
-    </script>
+}
+        </script>
 </body>
 </html>
-

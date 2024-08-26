@@ -19,3 +19,7 @@ def gallery(request):
 def about(request):
     # Your view logic here
     return render(request, 'about.html')  # Replace with the actual template name
+
+def contact(request):
+    # Your view logic here
+    return render(request, 'contact.html')  # Replace with the actual template name

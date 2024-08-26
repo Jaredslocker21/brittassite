@@ -23,9 +23,6 @@
     
 </head>
 <body>
-    <div class="background-image">
-        <img src="{% static 'media/site_images/top_view_collection_leaves_dots.jpg' %}">
-    </div>
     <div class="mobile-menu" onclick="toggleMobileMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -40,8 +37,9 @@
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'gallery' %}">gallery</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">About</a></li>
             </ul>
         </nav>
     </header>

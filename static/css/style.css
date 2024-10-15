@@ -273,12 +273,12 @@ footer {
 #divider {
     max-width: 100%;
     max-height: 100%;
-  
+    margin-top: 70px;
    
 }
 
 /* Rainbow effect */
-#rainbow {
+#headline {
     position: relative;
     width: 100%;
     height: 12vh;
@@ -327,9 +327,10 @@ footer {
 
 /*Card */
 .card {
-    border-radius: 10px;
+    border-radius: 5px;
     transition: transform 0.3s ease-in-out;
-    padding: 15px;
+    padding: 9px;
+    margin: 1px;
 }
 
 .card:hover {

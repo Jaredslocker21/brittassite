@@ -68,28 +68,8 @@
         </div>
         {% block content %}{% endblock %}
     </main>
-    <footer>
-        <ul class="social-network-icons">
-            <li>
-                <a href="{% url 'home' %}" aria-label="To the main page."><i class="fa-solid fa-house"></i></a>
-            </li>
-            <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fa-brands fa-facebook-square"></i></a>
-            </li>
-            <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page"><i class="fa-brands fa-twitter-square"></i></a>
-            </li>
-            <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page"><i class="fa-brands fa-instagram-square"></i></a>
-            </li>
-        </ul>
+    {% include 'footer.html' %}
 
-        <div id="copyright">
-            <span>
-                copyright: 2022 JMC Credits are located in the read me file
-            </span>
-        </div>
-    </footer>
     <script src="https://kit.fontawesome.com/cd08493386.js" crossorigin="anonymous"></script>
     <script>
         var header = document.getElementById("myHeader");

@@ -284,7 +284,6 @@ footer {
 
 
 #divider {
-    border-radius: 20px;
     max-width: 100%;
     max-height: 100%;
     background-size: 100%;
@@ -408,11 +407,7 @@ card {
         font-family: "Cardo", sans-serif;
     }
 
-    #divider {
-        flex: auto;
-        position: relative;
-        margin-bottom: 40px;
-    }
+    
 }
 
 .background-image {

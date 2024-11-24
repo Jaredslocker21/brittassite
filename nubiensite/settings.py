@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'brittas_blog',
+    'nubien_blog',
 ]
 
 SITE_ID = 1

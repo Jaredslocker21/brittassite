@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from brittas_blog.views import home, gallery, about
+from nubien_blog.views import home, gallery, about
 from django.conf import settings
 from django.conf.urls.static import static
 

@@ -1,1 +1,1 @@
-web: gunicorn brittassite.wsgi
+web: gunicorn nubiensite.wsgi

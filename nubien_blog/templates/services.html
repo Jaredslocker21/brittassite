@@ -19,7 +19,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/site_images/favicon.ico' %}">
     <link rel="manifest" href="/site.webmanifest">
     
-    <title>Gallery</title>
+    <title>services</title>
     
 </head>
 <body>
@@ -32,7 +32,7 @@
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li class="dropdown">
-                    <a href="{% url 'gallery' %}" class="dropbtn">Gallery</a>
+                    <a href="{% url 'services' %}" class="dropbtn">services</a>
                     <div class="dropdown-content">
                         <a href="#jewelry">Jewelry</a>
                         <a href="#paintings">Paintings</a>
@@ -49,14 +49,14 @@
             <div class="bar"></div>
         </nav>
     </header>
-    <!-- Gallery Sections -->
+    <!-- services Sections -->
     <main>
         {% block content %}
         <div class="container">
-            <h1 class="text-center my-4 element">Gallery</h1>
+            <h1 class="text-center my-4 element">services</h1>
             <hr>
             <!-- Jewelry Section -->
-            <div id="jewelry" class="gallery-section">
+            <div id="jewelry" class="services-section">
                 <h2 class="text-center my-4 element">Jewelry</h2>
                 <div class="row">
                     {% for item in jewelry %}
@@ -74,7 +74,7 @@
             </div>
             
             <!-- Paintings Section -->
-            <div id="paintings" class="gallery-section">
+            <div id="paintings" class="services-section">
                 <h2 class="text-center my-4 element">Paintings</h2>
                 <div class="row">
                     {% for item in paintings %}
@@ -92,7 +92,7 @@
             </div>
             
             <!-- Sculptures Section -->
-            <div id="sculptures"  class="gallery-section">
+            <div id="sculptures"  class="services-section">
                 <h2 class="text-center my-4 element">Sculptures</h2>
                 <div class="row">
                     {% for item in sculptures %}

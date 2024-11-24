@@ -17,82 +17,51 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/site_images/favicon.ico' %}">
     <link rel="manifest" href="/site.webmanifest">
     
-    <title>Britta's Blog</title>
+    <title>NuBien</title>
     
 </head>
-<body>
-    <div class="mobile-menu" onclick="toggleMobileMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <header class="header" id="myHeader">
-        <div class="logo">
-            <!-- Add your logo here -->
-            <img src="{% static 'logo/logo.png' %}" alt="Britta's Blog Logo">
+    <body>
+        <div class="hero-image">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">NuBien Studio</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="#">Home</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="#">About</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="{% url 'services' %}">Services</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                                </div>
+                                <li class="nav-item">
+                                    <div class="nav-link-wrapper">
+                                        <a class="nav-link" href="#">nubien</a>
+                                    </div>
+                                </li>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'gallery' %}">Gallery</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="logo">
-            <div class="logo-text" id="headline">
-                <span class="element">B</span>
-                <span class="element">r</span>
-                <span class="element">i</span>
-                <span class="element">t</span>
-                <span class="element">t</span>
-                <span class="element">a</span>
-                <span class="element">&nbsp;</span>
-                <span class="element">K</span>
-                <span class="element">l</span>
-                <span class="element">i</span>
-                <span class="element">n</span>
-                <span class="element">g</span>
-                <span class="element">e</span>
-                <span class="element">n</span>
-                <span class="element">s</span>
-                <span class="element">t</span>
-                <span class="element">i</span>
-                <span class="element">e</span>
-                <span class="element">r</span>
-                <span class="element">n</span>
-                <span class="element">a</span>
-            </div>
-        </div>
-        {% block content %}{% endblock %}
-    </main>
-    {% include 'footer.html' %}
 
-    <script src="https://kit.fontawesome.com/cd08493386.js" crossorigin="anonymous"></script>
-    <script>
-        var header = document.getElementById("myHeader");
-        var sticky = header.offsetTop;
-    
-        function myFunction() {
-            if (window.pageYOffset > sticky) {
-                header.classList.add("sticky");
-            } else {
-                header.classList.remove("sticky");
-            }
-        }
-    
-        function toggleMobileMenu() {
-            var mobileMenu = document.querySelector('.mobile-menu');
-            var navList = document.querySelector('nav ul');
-    
-            mobileMenu.classList.toggle('active');
-            navList.classList.toggle('show-mobile');
-        }
-
-        window.onscroll = function() {myFunction()};
-    </script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Use full jQuery version -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
 </html>
 

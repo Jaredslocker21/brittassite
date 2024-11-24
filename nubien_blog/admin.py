@@ -14,7 +14,7 @@ class HomePageContentAdmin(admin.ModelAdmin):
     display_image.allow_tags = True
     display_image.short_description = 'Image'
 
-class GalleryItemAdmin(admin.ModelAdmin):
+class servicesItemAdmin(admin.ModelAdmin):
     list_display = ('name', 'short_description', 'display_image')
     search_fields = ('name', 'description')
     list_filter = ('name',)
@@ -29,6 +29,6 @@ class GalleryItemAdmin(admin.ModelAdmin):
     display_image.short_description = 'Image'
 
 admin.site.register(HomePageContent, HomePageContentAdmin)
-admin.site.register(Jewelry, GalleryItemAdmin)
-admin.site.register(Painting, GalleryItemAdmin)
-admin.site.register(Sculpture, GalleryItemAdmin)
+admin.site.register(Jewelry, servicesItemAdmin)
+admin.site.register(Painting, servicesItemAdmin)
+admin.site.register(Sculpture, servicesItemAdmin)

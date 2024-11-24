@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.urls import path
-from nubien_blog.views import home, gallery, about
+from nubien_blog.views import home, services, about
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('gallery/', gallery, name='gallery'),
+    path('services/', services, name='services'),
     path('about/', about, name='about'),
     path('contact/', about, name='contact'),  # Fix: Changed 'art' to 'about'
 ]

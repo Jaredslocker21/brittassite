@@ -1,6 +1,4 @@
 from django.apps import AppConfig
 
-
-class BrittasBlogConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
+class NubienBlogConfig(AppConfig):
     name = 'nubien_blog'

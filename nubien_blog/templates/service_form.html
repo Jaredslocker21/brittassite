@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ form.instance.pk|default:"Add Service" }}</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+<a href="{% url 'service_list' %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}
+

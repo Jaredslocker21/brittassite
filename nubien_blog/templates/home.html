@@ -1,60 +1,67 @@
-<!-- home.html in your templates folder -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Other head elements -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Bringing the community together.">
+    <meta name="keywords" content="community, artists, local, events">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+               
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/site_images/favicon.ico' %}">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <title>NuBien</title>
+    
+</head>
+    <body>
+        <div class="hero-image">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">NuBien Studio</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="#">Home</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="#">About</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="{% url 'services' %}">Services</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="nav-link-wrapper">
+                                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                                </div>
+                                <li class="nav-item">
+                                    <div class="nav-link-wrapper">
+                                        <a class="nav-link" href="#">nubien</a>
+                                    </div>
+                                </li>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
 
-{% extends 'base.html' %}
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Use full jQuery version -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
 
-{% block content %}
-<div class="main-content">
-    <div id="rainbow" class="element">
-        <h1>”Colour Your World”</h1>
-    </div>
-    <div class="flex-container">
-        <div class="intro">
-            <!-- Content for the 'intro' div -->
-            {% if content %}
-            <span class="description">{{ content.description }}</span>
-            
-            <hr>
-            {% else %}
-            <p>No content found for the home page.</p>
-            {% endif %}
-            <!-- Content for the 'intro-photo' div -->
-            <div class="intro-photo">
-                <img src="{% if content %}{{ content.image.url }}{% endif %}"
-                    alt="{% if content %}{{ content.alt_text }}{% endif %}">
-            </div>
-        </div>
-    </div>
-    <section id="divider" class="element">
-        <div id="divider-cover-text">
-            <h3>From Nature</h3>
-            <h3>Art presents itself!</h3>
-        </div>
-    </section>
-    <div>
-        <h2 id="design-header" class="element">
-            Custom Designs
-        </h2>
-        <hr>
-    </div>
-    <section id="design">
-        <div class="card">
-            <h2>Jewelry</h2>
-            <div class="design-images">
-                <img src="static/media/site_images/design-image-one.png/" alt="design-image-one" />
-            </div>
-        </div>
-        <div class="card">
-            <h2>Paintings</h2>
-            <div class="design-images">
-                <img src="static/media/site_images/design-image-two.png/" alt="desing-image-two" />
-            </div>
-        </div>
-        <div class="card">
-            <h2>Sculptures</h2>
-            <div class="design-images">
-                <img src="static/media/site_images/design-image-three.png/" alt="design-image-three" />
-            </div>
-        </div>
-    </section>
-</div>
-{% endblock %}

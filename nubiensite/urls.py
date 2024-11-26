@@ -1,15 +1,7 @@
 from django.contrib import admin
-from django.urls import path
-from nubien_blog.views import home, services, about
-from django.conf import settings
-from django.conf.urls.static import static
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
-    path('services/', services, name='services'),
-    path('about/', about, name='about'),
-    path('contact/', about, name='contact'),  # Fix: Changed 'art' to 'about'
+    path('', include('nubien_blog.urls')),  # Correctly include the app's URLs
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

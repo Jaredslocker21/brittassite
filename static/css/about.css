@@ -6,7 +6,10 @@
 }
 
 h2 {
+    margin-top: auto;
+    padding-top: 7%;
     color: #81209c;
+    text-align: center;
 }
 
 body {

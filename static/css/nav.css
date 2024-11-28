@@ -1,0 +1,64 @@
+/* Custom Navbar Styles */
+.navbar-custom {
+    background: transparent !important; /* Slightly stronger transparency */
+    color: white !important; /* Ensure text color is white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+/* Navbar Links Styling */
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white !important; /* White text for links and brand */
+    text-transform: uppercase; /* Optional: Make text uppercase */
+    font-weight: bold;
+}
+
+/* Hover effect */
+.navbar-custom .nav-link:hover {
+    color: #a62dbb !important; /* Change color on hover */
+    text-decoration: none; /* Remove underline on hover */
+    border-bottom: 2px solid #a62dbb; /* Optional underline effect */
+}
+
+/* Navbar Toggler Button */
+.navbar-custom .navbar-toggler {
+    border: none;
+    color: white; /* Toggler icon color */
+}
+
+/* Navbar Collapse */
+.navbar-custom .navbar-collapse {
+    justify-content: center; /* Center align the links in the navbar */
+}
+
+/* Dropdown Menu */
+.navbar-custom .dropdown-menu {
+    background-color: rgba(42, 41, 41, 0.95); /* Transparent dropdown */
+    border: none;
+}
+
+.navbar-custom .dropdown-item {
+    color: white;
+}
+
+.navbar-custom .dropdown-item:hover {
+    background-color: #a62dbb;
+    color: white;
+}
+
+/* Mobile Navbar Button */
+.navbar-custom .navbar-toggler-icon {
+    background-color: white; /* White icon color */
+}
+
+/* Additional Mobile Adjustments */
+@media (max-width: 768px) {
+    .navbar-custom .navbar-nav {
+        flex-direction: column; /* Stack navbar items vertically on mobile */
+        text-align: center; /* Center align items */
+    }
+
+    .navbar-custom .nav-item {
+        margin: 10px 0; /* Space out nav items */
+    }
+}

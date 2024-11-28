@@ -1,47 +1,52 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}NuBien{% endblock %}</title>
-    
-    <!-- Bootstrap & Fonts -->
+    <title>About - NuBien</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/site_images/favicon.ico' %}">
-    
-    {% block extra_head %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <script src="{% static 'js/pagination.js' %}"></script>
 </head>
 <body>
-    <!-- Sticky Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">NuBien Studio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-                </ul>
+    <!-- Navigation and other parts of the page (header, etc.) -->
+    {% include 'nav.html' %}
+
+    <!-- Display the home content (optional) -->
+{% if home_content %}
+<section class="home-content">
+    <h1>{{ home_content.title }}</h1>
+    <p>{{ home_content.description }}</p>
+    {% if home_content.image %}
+        <img src="{{ home_content.image.url }}" alt="{{ home_content.title }}">
+    {% endif %}
+</section>
+{% endif %}
+
+<!-- Display all blog posts like services -->
+<section class="blog-list">
+    <h2>Our Community</h2>
+    {% for blog in blog_posts %}
+        <div class="blog-item">
+            <div class="blog-content">
+                <div class="blog-text">
+                    <h3>{{ blog.title }}</h3>
+                    <p>{{ blog.content|truncatewords:50 }}</p>
+                </div>
+                {% if blog.image %}
+                    <div class="blog-image">
+                        <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                    </div>
+                {% endif %}
             </div>
         </div>
-    </nav>
+    {% empty %}
+        <p>No blog posts available.</p>
+    {% endfor %}
+</section>
 
-    <!-- Main Content -->
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,44 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404  #nubien_blog views.py
+from .models import Service, BlogPost, HomePageContent
 
 def home(request):
     return render(request, 'home.html')
 
-def about(request):
-    return render(request, 'about.html')
+def about(request, id=None):
+    # Fetch the first piece of content for the about page
+    home_content = HomePageContent.objects.first()  # Fetches the first content
+    
+    if id:
+        # Fetch a specific blog post if an id is passed
+        blog_post = get_object_or_404(BlogPost, id=id)
+        return render(request, 'about.html', {'home_content': home_content, 'blog_posts': [blog_post]})
+    
+    # Otherwise, fetch all blog posts
+    blog_posts = BlogPost.objects.all()
+    return render(request, 'about.html', {'home_content': home_content, 'blog_posts': blog_posts})
 
 def contact(request):
     return render(request, 'contact.html')
 
-def service_list(request):
-    # Logic to fetch and display services
-    return render(request, 'service_list.html')
-
-def service_detail(request, pk):
-    # Logic to fetch and display a specific service by pk
-    return render(request, 'service_detail.html')
-
-def service_create(request):
-    # Logic for creating a new service
-    return render(request, 'service_form.html')
-
-def service_update(request, pk):
-    # Logic for updating an existing service
-    return render(request, 'service_form.html')
-
-def service_delete(request, pk):
-    # Logic for deleting a service
-    return render(request, 'service_confirm_delete.html')
-
-def blog_list(request):
-    # Logic to fetch and display blog posts
-    return render(request, 'blog_list.html')
-
-def blog_detail(request, pk):
-    # Logic to fetch and display a specific blog post by pk
-    return render(request, 'blog_detail.html')
-
-from django.shortcuts import render
-
-def contact(request):
-    return render(request, 'contact.html')  # Make sure to create this template
-
+def services(request):
+    services = Service.objects.all()  # Fetch all services
+    return render(request, 'services.html', {'services': services})

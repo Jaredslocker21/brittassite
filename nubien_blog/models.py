@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+from PIL import Image  # You can install Pillow for image processing
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -6,6 +8,13 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+def validate_image_size(image):
+    img = Image.open(image)
+    max_width = 1000  # Maximum width in pixels
+    max_height = 1000  # Maximum height in pixels
+    if img.width > max_width or img.height > max_height:
+        raise ValidationError(f"Image size should be no larger than {max_width}x{max_height} pixels.")
 
 class Service(models.Model):
     category = models.ForeignKey(
@@ -15,7 +24,7 @@ class Service(models.Model):
     )
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='services/')
+    image = models.ImageField(upload_to='services/', validators=[validate_image_size])
     image_title = models.CharField(
         max_length=255,
         blank=True,

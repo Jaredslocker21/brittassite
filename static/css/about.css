@@ -1,0 +1,156 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+h2 {
+    color: #81209c;
+}
+
+body {
+    background-color: #2a2929;
+}
+/* Global Image Styling */
+img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+    border-radius: 10px; /* Optional: Add rounded corners for a cleaner look */
+    box-shadow: 0 4px 6px rgba(223, 211, 211, 0.3); /* Optional: Add shadow to images */
+}
+
+
+html,
+body {
+    height: 100%;
+}
+
+/* Home Content Section */
+.home-content {
+    display: flex;  /* Use Flexbox for side-by-side layout */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #121212;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem;
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    flex: 1;  /* Allow title to take remaining space */
+}
+
+.home-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    flex: 2;  /* Allow description to take more space */
+}
+
+.home-content img {
+    max-width: 45%;  /* Ensure the image takes up only part of the space */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+/* Blog List */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 20px;
+    justify-content: center; /* Center the blog list */
+}
+
+.blog-item {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 20px;
+    background: #121212;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(236, 231, 231, 0.5);
+    width: 66%;  /* 2/3 of the page width */
+    max-width: 1200px; /* Maximum width for large screens */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.blog-text {
+    flex: 1;
+}
+
+.blog-image {
+    width: 350px;
+    height: 450px;
+}
+
+.blog-item .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(251, 251, 251, 0.3);
+}
+
+/* Reverse layout for every even blog item */
+.blog-list .blog-item:nth-child(even) .blog-content {
+    flex-direction: row-reverse; /* Reverse the layout for even blog items */
+}
+
+/* Optional: Add styles for blog text */
+.blog-text h3 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+
+.blog-text p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .blog-item {
+        flex-direction: column; /* Stack image and text vertically on small screens */
+        width: 90%;  /* Use more width on smaller screens */
+    }
+
+    .blog-item .blog-image {
+        width: 100%;
+        height: auto;  /* Let image height adjust proportionally */
+    }
+}
+
+
+/* Pagination */
+.pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pagination .page-item {
+    background: #121212;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.pagination .page-item.active {
+    background: red;
+    color: white;
+}

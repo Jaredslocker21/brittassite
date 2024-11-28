@@ -1,7 +1,13 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('nubien_blog.urls')),  # Correctly include the app's URLs
+    path('admin/', admin.site.urls),  # Admin site
+    path('', include('nubien_blog.urls')),  # Main app URLs, including home, about, services, blog, etc.
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

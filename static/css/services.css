@@ -1,0 +1,125 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+h2 {
+    color: #81209c;
+}
+
+body {
+    background-color: #2a2929;
+}
+
+/* Global Image Styling */
+img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+    border-radius: 10px; /* Optional: Add rounded corners for a cleaner look */
+    box-shadow: 0 4px 6px rgba(223, 211, 211, 0.3); /* Optional: Add shadow to images */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Service List Section */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 20px;
+    justify-content: center; /* Center the services list */
+}
+
+.service-item {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 20px;
+    background: #121212;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(236, 231, 231, 0.5);
+    width: 66%;  /* 2/3 of the page width */
+    max-width: 1200px; /* Maximum width for large screens */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.service-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-image {
+    width: 350px;
+    height: 450px;
+}
+
+.service-item .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(251, 251, 251, 0.3);
+}
+
+/* Reverse layout for every even service item */
+.services-list .service-item:nth-child(even) .service-content {
+    flex-direction: row-reverse; /* Reverse the layout for even service items */
+}
+
+/* Optional: Add styles for service text */
+.service-text h3 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+
+.service-text p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column; /* Stack image and text vertically on small screens */
+        width: 90%;  /* Use more width on smaller screens */
+    }
+
+    .service-item .service-image {
+        width: 100%;
+        height: auto;  /* Let image height adjust proportionally */
+    }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pagination .page-item {
+    background: #121212;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.pagination .page-item.active {
+    background: red;
+    color: white;
+}

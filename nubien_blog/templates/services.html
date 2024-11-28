@@ -1,67 +1,42 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Other head elements -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Bringing the community together.">
-    <meta name="keywords" content="community, artists, local, events">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
-               
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'media/site_images/favicon.ico' %}">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <title>NuBien</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - NuBien</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    <script src="{% static 'js/pagination.js' %}"></script>
+
 </head>
-    <body>
-        <div class="hero-image">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">NuBien Studio</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <div class="nav-link-wrapper">
-                                    <a class="nav-link" href="{% url 'home' %}">Home</a>
-                                </div>
-                            </li>a
-                            <li class="nav-item">
-                                <div class="nav-link-wrapper">
-                                    <a class="nav-link" href="{% url 'about' %}">About</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="nav-link-wrapper">
-                                    <a class="nav-link" href="{% url 'services' %}">Services</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="nav-link-wrapper">
-                                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                                </div>
-                                <li class="nav-item">
-                                    <div class="nav-link-wrapper">
-                                        <a class="nav-link" href="#">nubien</a>
-                                    </div>
-                                </li>
-                            </li>
-                        </ul>
+<body>
+    {% include 'nav.html' %}
+
+    <!-- Display all services -->
+    <section class="services-list">
+        <h2>Our Services</h2>
+        {% for service in services %}
+            <div class="service-item">
+                <div class="service-content">
+                    <div class="service-text">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                        <p><strong>Price:</strong> ${{ service.price }}</p>
                     </div>
-            </nav>
-        </div>
+                    {% if service.image %}
+                        <div class="service-image">
+                            <img src="{{ service.image.url }}" alt="{{ service.title }}">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>No services available.</p>
+        {% endfor %}
+    </section>
+    
 
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Use full jQuery version -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
+</body>
 </html>
-

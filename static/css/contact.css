@@ -1,0 +1,98 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Background */
+.hero-image {
+    background-image: url('../media/site_images/bgimage.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative;
+    color: white;
+}
+
+/* Navbar Customization */
+.navbar-custom {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Transparent background */
+    padding: 10px 20px;
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+/* Contact Content Section */
+.contact-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 90%; /* Adjust width for smaller screens */
+}
+
+.contact-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.contact-content input,
+.contact-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-content button {
+    background-color: #81209c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-content button:hover {
+    background-color: #a62dbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    .contact-content h1 {
+        font-size: 2rem;
+    }
+}
